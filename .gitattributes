@@ -1,0 +1,49 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# C# files
+*.cs text diff=csharp
+
+# Visual Studio Solution files
+*.sln text eol=crlf
+*.csproj text eol=crlf
+*.vbproj text eol=crlf
+*.vcxproj text eol=crlf
+*.vcproj text eol=crlf
+*.dbproj text eol=crlf
+*.fsproj text eol=crlf
+*.lsproj text eol=crlf
+*.wixproj text eol=crlf
+*.modelproj text eol=crlf
+*.sqlproj text eol=crlf
+*.wwaproj text eol=crlf
+
+# Config files
+*.config text eol=crlf
+*.json text
+*.xml text
+
+# Markdown files
+*.md text
+
+# Scripts
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Binary files
+*.dll binary
+*.exe binary
+*.pdb binary
+*.snk binary
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Documentation
+*.pdf binary
