@@ -106,6 +106,7 @@ public class AuthController : ControllerBase
             {
                 Id = Guid.NewGuid(),
                 Email = request.Email,
+                Username = GenerateUsername(request.FirstName, request.LastName),
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 CreatedAt = DateTime.UtcNow,
@@ -375,5 +376,17 @@ public class AuthController : ControllerBase
             throw new UnauthorizedAccessException("Invalid user ID in token");
         }
         return userId;
+    }
+
+    private string GenerateUsername(string firstName, string lastName)
+    {
+        // Create a base username from first and last name
+        var baseUsername = $"{firstName.ToLower()}.{lastName.ToLower()}".Replace(" ", "");
+
+        // Add a random number to ensure uniqueness
+        var random = new Random();
+        var uniqueNumber = random.Next(100, 9999);
+
+        return $"{baseUsername}{uniqueNumber}";
     }
 }
